@@ -12,6 +12,8 @@ import {
   checkWin
 } from "./GameBoard";
 
+import Leaderboard from "./Leaderboard";
+
 const Cell = ({ number }) => {
   return (
     <div className={`cell cell-${number}`}>{number > 0 ? number : ""}</div>
@@ -88,11 +90,12 @@ const GameController = () => {
             <div key={`row-${i}`} className="row">
               {row.map((cell, j) => (
                 <Cell key={`cell-${i}-${j}`} number={cell} />
-              ))}
+                ))}
             </div>
           );
         })}
       </div>
+      <Leaderboard />
     </>
   );
 };
