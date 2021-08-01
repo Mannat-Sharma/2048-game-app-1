@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Over from "./Over";
-import Win from "./Win";
 
 import {
   getEmptyBoard,
@@ -11,24 +9,23 @@ import {
   moveUp,
   moveDown,
   isOver,
-  checkWin,
-  TotalScore,
+  checkWin
 } from "./GameBoard";
 
 const Cell = ({ number }) => {
   return (
-    <div className={`cell cell-${number}`}>{number > 0 ? number : ""}</div>
+    <div className={`cell cell-${number}`}></div>
   );
 };
 
-const GameController = ({ setDisplay = { setDisplay } }) => {
+const GameController = () => {
   const [board, setBoard] = useState(generateStart(getEmptyBoard()));
 
   const checkEndGame = () => {
     if (checkWin(board)) {
       console.log("You win!");
     } else if (isOver(board)) {
-      console.log("Game Over");
+      console.log("Game over!");
     }
   };
 
@@ -85,23 +82,17 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
 
   return (
     <>
-      {checkWin(board) ? (
-        <Win setDisplay={setDisplay} />
-      ) : isOver(board) ? (
-        <Over setDisplay={setDisplay} />
-      ) : (
-        <div className="game-board">
-          {board.map((row, i) => {
-            return (
-              <div key={`row-${i}`} className="row">
-                {row.map((cell, j) => (
-                  <Cell key={`cell-${i}-${j}`} number={cell} />
-                ))}
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <div className="game-board">
+        {board.map((row, i) => {
+          return (
+            <div key={`row-${i}`} className="row">
+              {row.map((cell, j) => (
+                <Cell key={`cell-${i}-${j}`} number={cell} />
+              ))}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
