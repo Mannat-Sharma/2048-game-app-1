@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap");
 * {
   box-sizing: border-box;
 }
-body{  
+body {
   background-color: #000000;
- 
 }
-h1{
-  font-family: 'Press Start 2P', cursive;
-  color: #BC6FF1;
+h1 {
+  font-family: "Press Start 2P", cursive;
+  color: #bc6ff1;
   margin-top: 3%;
   margin-bottom: 0;
-
 }
 
-h1{font-size: 5rem;}
-h2{
-  font-family: 'Orbitron', sans-serif;
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-family: "Orbitron", sans-serif;
   font-size: 3rem;
-  color:#BC6FF1;
+  color: #bc6ff1;
   margin-bottom: 5%;
   margin-top: 0;
 }
@@ -43,24 +43,23 @@ h2{
   }
 }
 
-@media only screen and (min-width: 800px){
-  .game-board{
+@media only screen and (min-width: 800px) {
+  .game-board {
     margin: 0 15%;
   }
 }
 
-@media only screen and (min-width: 1000px){
-  .game-board{
+@media only screen and (min-width: 1000px) {
+  .game-board {
     margin: 0 25%;
   }
 }
 
-@media only screen and (min-width: 1200px){
-  .game-board{
+@media only screen and (min-width: 1200px) {
+  .game-board {
     margin: 0 30%;
   }
 }
-
 
 .row {
   display: grid;
@@ -78,40 +77,40 @@ h2{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #52057B;
+  background-color: #52057b;
   border-radius: 5px;
-  border: 2px solid #892CDC;
+  border: 2px solid #892cdc;
 }
 
-.cell-2{
+.cell-2 {
   width: 100%;
   height: 90px;
   background-image: url(./gifs/2.gif);
   background-position: center;
   background-size: cover;
 }
-.cell-4{
+.cell-4 {
   width: 100%;
   height: 90px;
   background-image: url(./gifs/4.gif);
   background-position: center;
   background-size: cover;
 }
-.cell-8{
+.cell-8 {
   width: 100%;
   height: 90px;
   background-image: url(./gifs/8.gif);
   background-position: center;
   background-size: cover;
 }
-.cell-16{
+.cell-16 {
   width: 100%;
   height: 90px;
   background-image: url(./gifs/16.gif);
   background-position: center;
   background-size: cover;
 }
-.cell-32{
+.cell-32 {
   width: 100%;
   height: 90px;
   background-image: url(./gifs/32.gif);
