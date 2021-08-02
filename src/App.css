@@ -27,6 +27,7 @@ h2 {
   text-align: center;
 }
 
+
 .game-board {
   /* background-color: #93329E; */
   display: flex;
@@ -35,6 +36,7 @@ h2 {
   align-items: stretch;
   padding: 4px;
   margin: 10% 25%;
+
 }
 
 @media only screen and (min-width: 300px) {
@@ -80,21 +82,25 @@ h2 {
   background-color: #52057b;
   border-radius: 5px;
   border: 2px solid #892cdc;
+  transform-style: preserve-3d;
+    transition: all 0.5s ease;
 }
 
 .cell-2 {
   width: 100%;
   height: 90px;
-  background-image: url(./gifs/2.gif);
+  background-image: url(./gifs/num2.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-4 {
   width: 100%;
   height: 90px;
-  background-image: url(./gifs/4.gif);
+  background-image: url(./gifs/num4.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-8 {
   width: 100%;
@@ -102,6 +108,15 @@ h2 {
   background-image: url(./gifs/8.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
+}
+.cell-8::after {
+  width: 100%;
+  height: 90px;
+  background-image: url(./gifs/8.gif);
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-16 {
   width: 100%;
@@ -109,6 +124,7 @@ h2 {
   background-image: url(./gifs/16.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-32 {
   width: 100%;
@@ -116,6 +132,7 @@ h2 {
   background-image: url(./gifs/32.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-64 {
   width: 100%;
@@ -123,6 +140,7 @@ h2 {
   background-image: url(./gifs/64.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-128 {
   width: 100%;
@@ -130,6 +148,7 @@ h2 {
   background-image: url(./gifs/128.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-256 {
   width: 100%;
@@ -137,6 +156,7 @@ h2 {
   background-image: url(./gifs/256.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-512 {
   width: 100%;
@@ -144,6 +164,7 @@ h2 {
   background-image: url(./gifs/512.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-1024 {
   width: 100%;
@@ -151,6 +172,7 @@ h2 {
   background-image: url(./gifs/512.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }
 .cell-2048 {
   width: 100%;
@@ -158,4 +180,5 @@ h2 {
   background-image: url(./gifs/512.gif);
   background-position: center;
   background-size: cover;
+  transform: rotateY(360deg);
 }

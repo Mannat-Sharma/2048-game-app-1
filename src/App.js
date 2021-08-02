@@ -8,7 +8,7 @@ function App() {
   const [display, setDisplay] = useState(true);
   return (
     <div className="App">
-      {display ? (
+      {display ? (   
         <Motion setDisplay={setDisplay} />
       ) : (
         <MainGame setDisplay={setDisplay} />
