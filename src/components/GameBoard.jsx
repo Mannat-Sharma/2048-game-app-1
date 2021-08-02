@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const getEmptyBoard = () => [
   [0, 0, 0, 0],
   [0, 0, 0, 0],
@@ -5,10 +7,26 @@ export const getEmptyBoard = () => [
   [0, 0, 0, 0],
 ];
 
-let total = 0;
-const TotalScore = (number) => {
-  return total + number;
-};
+export const DisplayScore =({board})=>{
+  const [total, setTotal] = useState(0);
+
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length - 1; j++) {
+      if (board[i][j] !== 0 && board[i][j] === board[i][j + 1]) {
+        setTotal(total*2);
+        console.log(total);
+        board[i][j] = board[i][j] * 2;
+        board[i][j + 1] = 0;
+      }
+    }
+  }
+
+  return(
+    <div className="score">
+    Score: {total}
+    </div>
+  )
+}
 
 const hasValue = (board, value) => {
   for (let i = 0; i < board.length; i++) {
@@ -79,8 +97,7 @@ const merge = (board) => {
       if (board[i][j] !== 0 && board[i][j] === board[i][j + 1]) {
         board[i][j] = board[i][j] * 2;
         board[i][j + 1] = 0;
-
-        console.log(TotalScore(board[i][j]));
+        // console.log(TotalScore(board[i][j]));
       }
     }
   }

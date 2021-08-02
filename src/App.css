@@ -4,6 +4,7 @@
 }
 body {
   background-color: #000000;
+  user-select: none;
 }
 h1 {
   font-family: "Orbitron", sans-serif;
@@ -71,6 +72,11 @@ h2 {
   /* border: 2px solid red;
   margin: 2px; */
 }
+@keyframes mymove {
+  0%   {transform: scale(1)}
+  50%  {transform: scale(0.5)}
+  100% {transform: scale(1)}
+}
 
 .cell {
   padding: 10px;
@@ -81,8 +87,7 @@ h2 {
   background-color: #000000;
   border-radius: 5px;
   /* border: none; */
-  transform-style: preserve-3d;
-   transition: all 0.5s ease;
+   
   border:none;
 }
 
@@ -92,7 +97,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid orange;
   color: orange;
-  transform: rotateY(360deg);
+  animation: mymove 100ms ease-in ;  
 }
 .cell-4 {
   width: 100%;
@@ -100,7 +105,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(7, 161, 250);
   color: rgb(7, 161, 250);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in;
 }
 .cell-8 {
   width: 100%;
@@ -108,7 +113,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid yellow;
   color: yellow;
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-16 {
   width: 100%;
@@ -116,7 +121,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(43, 255, 0);
   color: rgb(43, 255, 0);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-32 {
   width: 100%;
@@ -124,7 +129,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(234, 0, 255);
   color: rgb(234, 0, 255);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-64 {
   width: 100%;
@@ -132,7 +137,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(255, 0, 119);
   color: rgb(255, 0, 119);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-128 {
   width: 100%;
@@ -140,7 +145,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(59, 34, 201);
   color: rgb(59, 34, 201);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-256 {
   width: 100%;
@@ -148,7 +153,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid rgb(201, 34, 62);
   color: rgb(201, 34, 62);
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-512 {
   width: 100%;
@@ -156,7 +161,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid #00FFFF;
   color: #00FFFF;
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-1024 {
   width: 100%;
@@ -164,7 +169,7 @@ h2 {
   font-size: 3rem;
   border: 3px solid #0033FF;
   color: #0033FF;
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
 }
 .cell-2048 {
   width: 100%;
@@ -172,5 +177,20 @@ h2 {
   font-size: 3rem;
   border: 3px solid #6E0DD0;
   color: #6E0DD0;
-  transform:rotateY(360deg);
+  animation: mymove 100ms ease-in ;
+}
+
+.score{
+  border: 1px solid red;
+  display: inline;
+  color: white;
+  padding: 12px 18px;
+  font-size: 2rem;
+  background: transparent;
+  outline: none;
+  color: rgb(7 161 250);
+  border: 2px solid rgb(7 161 250);
+  float: right;
+  margin-right: 15vw;
+  margin-top: -75vh;
 }
