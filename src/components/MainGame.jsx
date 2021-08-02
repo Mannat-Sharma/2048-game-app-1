@@ -16,7 +16,7 @@ import {
 } from "./GameBoard";
 
 const Cell = ({ number }) => {
-  return <div className={`cell cell-${number}`}></div>;
+  return <div className={`cell cell-${number}`}>{number>0? number:""}</div>;
 };
 
 const GameController = ({ setDisplay = { setDisplay } }) => {
@@ -89,6 +89,8 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
         <Over setDisplay={setDisplay} />
       ) : (
         <div className="game-board">
+          <h1>2 0 4 8</h1>
+          <h2>GAME</h2>
           {board.map((row, i) => {
             return (
               <div key={`row-${i}`} className="row">
