@@ -15,6 +15,9 @@ import {
   TotalScore,
 } from "./GameBoard";
 
+import styled from "styled-components";
+
+
 const Cell = ({ number }) => {
   return <div className={`cell cell-${number}`}>{number>0? number:""}</div>;
 };
@@ -29,6 +32,21 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
       console.log("Game Over");
     }
   };
+  
+  const Buttons = styled.button`
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    align-self: center;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    margin-bottom:2vh;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    outline: none
+    cursor: pointer;
+    color: orange;
+    border: 2px solid orange;`;
 
   const left = () => {
     const newBoard = moveLeft(board);
@@ -102,6 +120,21 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
           })}
         </div>
       )}
+        <Buttons
+            whileHover={{ scale: 1.1 }}
+            whileTap={{
+              scale: 0.93,
+              backgroundColor: "#67F6E7",
+              border: "none",
+              color: "#000",
+            }}
+            initial={{ opacity: 0 }}
+            onClick={() => {
+              setBoard(generateStart(getEmptyBoard()));
+            }}
+          >
+            Restart
+        </Buttons>
     </>
   );
 };

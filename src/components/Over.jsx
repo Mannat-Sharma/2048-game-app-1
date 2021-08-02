@@ -5,11 +5,13 @@ import styled from "styled-components";
 import img from '../images/2048game.png';
 
 const Section = styled.section`
+
 z-index:-1;
 display: flex;
 justify-content: center;
 align-items: center;
 height: 97vh;
+
 `;
 
 const Container = styled(motion.div)`
