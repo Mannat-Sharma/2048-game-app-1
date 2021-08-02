@@ -12,11 +12,16 @@ import {
   moveDown,
   isOver,
   checkWin,
-  TotalScore,
+  DisplayScore
 } from "./GameBoard";
 
 import styled from "styled-components";
 
+import restartAudio from "../Audio/click_restart.mp3";
+import someSound from "../Audio/merge_tile_sound.mp3";
+
+let mergeTileAudio = new Audio(someSound);
+let restartButtonAudio = new Audio(restartAudio);
 
 const Cell = ({ number }) => {
   return <div className={`cell cell-${number}`}>{number>0? number:""}</div>;
@@ -73,6 +78,9 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
   };
 
   const onKeyDown = (e) => {
+    if(!isOver(board)){
+      mergeTileAudio.play();
+    }
     switch (e.key) {
       case "ArrowLeft":
         left();
@@ -106,6 +114,7 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
       ) : isOver(board) ? (
         <Over setDisplay={setDisplay} />
       ) : (
+        <div>
         <div className="game-board">
           <h1>2 0 4 8</h1>
           <h2>GAME</h2>
@@ -119,7 +128,6 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
             );
           })}
         </div>
-      )}
         <Buttons
             whileHover={{ scale: 1.1 }}
             whileTap={{
@@ -131,10 +139,15 @@ const GameController = ({ setDisplay = { setDisplay } }) => {
             initial={{ opacity: 0 }}
             onClick={() => {
               setBoard(generateStart(getEmptyBoard()));
+              restartButtonAudio.play();
             }}
+            style={{cursor:"pointer"}}
           >
             Restart
         </Buttons>
+        </div>
+      )}
+            {/* <DisplayScore board={board}/> */}
     </>
   );
 };

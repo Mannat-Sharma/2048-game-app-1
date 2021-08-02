@@ -106,7 +106,7 @@ function Over({ setDisplay }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1.5 } }}
             onClick={() => {
-              console.log("hello");
+              window.location.href = 'https://twitter.com/intent/tweet?text=Love%20to%20play%20this%20please%20support%20micro%20processing%20minions%20team%20at%20@devsnest_%20https://micro-processing-minions-2048.netlify.app/%20please%20follow%20us%20on%20twitter';
             }}
           >
             Tweet
