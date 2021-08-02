@@ -9,7 +9,7 @@ import four from "../images/four.png";
 import styled from "styled-components";
 
 const Section = styled.section`
-  height: 100vh;
+  height: 97vh;
   display: flex;
   justify-content: center;
   align-items: center;
